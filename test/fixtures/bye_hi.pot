@@ -1,0 +1,13 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: bye.js:2
+msgid "Bye"
+msgstr ""
+
+#: hi.js:1
+msgid "Hi"
+msgstr ""
