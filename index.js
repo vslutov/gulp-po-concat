@@ -45,11 +45,11 @@ module.exports = function poConcat (options) {
     }
 
     var domain = path.basename(file.path, '.pot');
-    
+
     if (lodash.isFunction(options.domain)) {
       domain = options.domain(file);
     } else if (lodash.isString(options.domain)) {
-      domain = options.domain
+      domain = options.domain;
     }
 
     var messages = catalog.poToMessages(file.contents.toString(), {domain: domain});
