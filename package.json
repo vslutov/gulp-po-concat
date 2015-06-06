@@ -1,6 +1,6 @@
 {
   "name": "gulp-po-concat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gulp plugin to concatenate PO files",
   "main": "index.js",
   "scripts": {
