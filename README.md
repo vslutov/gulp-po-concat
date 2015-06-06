@@ -29,3 +29,36 @@ gulp.task('pot', function () {
         .pipe(gulp.dest('po/'));
 });
 ```
+
+## Options
+
+### `domain`
+
+PoConcat's default behavior is to assign messages to a domain that matches the
+file's name. You can optionally request poConcat to force all messages to use a
+specified domain by setting the `domain` attribute in the options object.
+
+```js
+gulp.src('**/*.js')
+    .pipe(xgettextJs())
+    .pipe(poConcat({ domain: "messages" }))
+    .pipe(gulp.dest('po/'));
+```
+
+The above example concat all found strings into a single domain/file of "messages"
+
+You may also pass a function which receives a file object to name the domain:
+
+```js
+var path = require('path');
+gulp.src('**/*.js')
+    .pipe(xgettextJs())
+    .pipe(poConcat({
+      domain: function(file) {
+        return path.basename(file.path, '.pot');
+      }
+    }))
+    .pipe(gulp.dest('po/'));
+```
+
+The above is the current default behavior.

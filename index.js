@@ -1,5 +1,6 @@
 'use strict';
 
+var lodash = require('lodash');
 var Catalog = require('gettext-catalog');
 var gutil = require('gulp-util');
 var File = gutil.File;
@@ -7,7 +8,9 @@ var through = require('through2');
 
 var path = require('path');
 
-module.exports = function poConcat () {
+module.exports = function poConcat (options) {
+  options = options || {};
+
   var catalog = new Catalog();
 
   var firstFile = null;
@@ -41,10 +44,16 @@ module.exports = function poConcat () {
       firstFile = file;
     }
 
-    // TODO ability to pass function to determine this
     var domain = path.basename(file.path, '.pot');
 
+    if (lodash.isFunction(options.domain)) {
+      domain = options.domain(file);
+    } else if (lodash.isString(options.domain)) {
+      domain = options.domain;
+    }
+
     var messages = catalog.poToMessages(file.contents.toString(), {domain: domain});
+
     catalog.addMessages(messages);
 
     return cb();
