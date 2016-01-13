@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/gabegorelick/gulp-po-concat",
   "dependencies": {
-    "gettext-catalog": "0.0.2",
+    "gettext-catalog": "0.0.4",
     "gulp-util": "^3.0.4",
     "lodash": "^3.8.0",
     "through2": "^0.6.5"
