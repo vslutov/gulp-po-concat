@@ -4,7 +4,7 @@
   "description": "Gulp plugin to concatenate PO files",
   "main": "index.js",
   "scripts": {
-    "test": "jscs *.js test/*.js && jshint *.js test/*.js && mocha"
+    "test": "eslint *.js test/*.js && mocha"
   },
   "repository": {
     "type": "git",
@@ -33,8 +33,7 @@
     "through2": "^0.6.5"
   },
   "devDependencies": {
-    "jscs": "^1.13.1",
-    "jshint": "^2.7.0",
+    "eslint": "^2.10.2",
     "mocha": "^2.2.5",
     "should": "^6.0.1"
   }
