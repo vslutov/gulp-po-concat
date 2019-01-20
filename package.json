@@ -28,13 +28,13 @@
   "homepage": "https://github.com/gabegorelick/gulp-po-concat",
   "dependencies": {
     "gettext-catalog": "0.0.4",
-    "gulp-util": "^3.0.4",
-    "lodash": "^4.12.0",
+    "gulp-util": "^3.0.8",
+    "lodash": "^4.17.11",
     "through2": "^2.0.1"
   },
   "devDependencies": {
     "eslint": "^2.10.2",
-    "mocha": "^2.2.5",
+    "mocha": "^5.2.0",
     "should": "^8.4.0"
   }
 }
